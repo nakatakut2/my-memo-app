@@ -1,0 +1,36 @@
+.header {
+  margin: 50px 50px 0px 50px;
+}
+
+.container {
+  display: flex;
+}
+
+button {
+  margin: 10px;
+  width: 100px;
+}
+
+.memoList {
+  width: 200px;
+  margin: 0px 50px;
+}
+
+li {
+  margin: 5px 0px;
+  cursor: pointer;
+}
+
+li:hover {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.selectedMemo {
+  color: red;
+}
+
+textarea {
+  padding: 10px;
+  font-size: 17px;
+}

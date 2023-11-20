@@ -46,6 +46,7 @@ export default function MemoApp() {
         />
         {activeMemo && (
           <MemoEditer
+            key={activeMemo.id}
             content={activeMemo.content}
             handleUpdateMemo={handleUpdateMemo}
             handleDeleteMemo={handleDeleteMemo}

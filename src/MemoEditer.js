@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 export default function MemoEditer({
   content,
@@ -6,9 +6,6 @@ export default function MemoEditer({
   handleDeleteMemo,
 }) {
   const [inputText, setInputText] = useState(content);
-  useEffect(() => {
-    setInputText(content);
-  }, [content]);
 
   return (
     <div>

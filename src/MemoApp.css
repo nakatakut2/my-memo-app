@@ -1,5 +1,14 @@
-.header {
+.MemoApp {
+  width: 1000px;
+}
+
+header {
   margin: 50px 50px 0px 50px;
+  display: flex;
+}
+
+.login {
+  margin: 30px;
 }
 
 .container {

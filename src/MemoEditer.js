@@ -1,7 +1,11 @@
 import { useState, useContext } from "react";
 import { LoginContext } from "./MemoApp";
 
-export default function MemoEditer({ content, handleUpdateMemo, handleDeleteMemo }) {
+export default function MemoEditer({
+  content,
+  handleUpdateMemo,
+  handleDeleteMemo,
+}) {
   const [inputText, setInputText] = useState(content);
   const isLogin = useContext(LoginContext);
 

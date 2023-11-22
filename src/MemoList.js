@@ -1,7 +1,12 @@
 import { useContext } from "react";
 import { LoginContext } from "./MemoApp";
 
-export default function MemoList({ memos, activeMemo, setActiveMemo, handleAddNewMemo }) {
+export default function MemoList({
+  memos,
+  activeMemo,
+  setActiveMemo,
+  handleAddNewMemo,
+}) {
   const isLogin = useContext(LoginContext);
   return (
     <div className="memoList">
@@ -10,7 +15,9 @@ export default function MemoList({ memos, activeMemo, setActiveMemo, handleAddNe
         {memos.map((memo) => (
           <li
             key={memo.id}
-            className={activeMemo && memo.id === activeMemo.id ? "selectedMemo" : ""}
+            className={
+              activeMemo && memo.id === activeMemo.id ? "selectedMemo" : ""
+            }
             onClick={() => {
               setActiveMemo(memo);
             }}

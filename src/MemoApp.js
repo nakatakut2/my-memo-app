@@ -29,7 +29,9 @@ export default function MemoApp() {
 
   const handleUpdateMemo = (inputText) => {
     setMemos((memos) =>
-      memos.map((memo) => (memo.id === activeMemo.id ? { ...memo, content: inputText } : memo))
+      memos.map((memo) =>
+        memo.id === activeMemo.id ? { ...memo, content: inputText } : memo
+      )
     );
     setActiveMemo(null);
   };

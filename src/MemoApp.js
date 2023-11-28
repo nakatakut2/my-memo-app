@@ -17,7 +17,11 @@ export default function MemoApp() {
     localStorage.setItem("memos", JSON.stringify(memos));
   }, [memos]);
 
-  const handleLoginChange = () => {
+  const handleLogin = () => {
+    setIsLogin(!isLogin);
+  };
+
+  const handleLogout = () => {
     setIsLogin(!isLogin);
   };
 
@@ -29,9 +33,7 @@ export default function MemoApp() {
 
   const handleUpdateMemo = (inputText) => {
     setMemos((memos) =>
-      memos.map((memo) =>
-        memo.id === activeMemo.id ? { ...memo, content: inputText } : memo
-      )
+      memos.map((memo) => (memo.id === activeMemo.id ? { ...memo, content: inputText } : memo))
     );
     setActiveMemo(null);
   };
@@ -45,9 +47,15 @@ export default function MemoApp() {
     <div className="MemoApp">
       <header>
         <h1>メモ帳</h1>
-        <button className="login" onClick={handleLoginChange}>
-          {isLogin ? "ログアウト" : "ログイン"}
-        </button>
+        {isLogin ? (
+          <button className="login" onClick={handleLogin}>
+            ログアウト
+          </button>
+        ) : (
+          <button className="login" onClick={handleLogout}>
+            ログイン
+          </button>
+        )}
       </header>
       <LoginContext.Provider value={isLogin}>
         <div className="container">

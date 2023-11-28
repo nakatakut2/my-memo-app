@@ -18,11 +18,11 @@ export default function MemoApp() {
   }, [memos]);
 
   const handleLogin = () => {
-    setIsLogin(!isLogin);
+    setIsLogin(true);
   };
 
   const handleLogout = () => {
-    setIsLogin(!isLogin);
+    setIsLogin(false);
   };
 
   const handleAddNewMemo = () => {
@@ -48,11 +48,11 @@ export default function MemoApp() {
       <header>
         <h1>メモ帳</h1>
         {isLogin ? (
-          <button className="login" onClick={handleLogin}>
+          <button className="login" onClick={handleLogout}>
             ログアウト
           </button>
         ) : (
-          <button className="login" onClick={handleLogout}>
+          <button className="login" onClick={handleLogin}>
             ログイン
           </button>
         )}
